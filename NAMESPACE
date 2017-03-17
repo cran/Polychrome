@@ -1,0 +1,26 @@
+###
+### NAMESPACE
+###
+
+## Imported methods
+import(colorspace)
+import(rgl)
+
+importFrom("graphics", "barplot", "lines", "mtext", "text", "par", "abline")
+importFrom("grDevices", "col2rgb", "colors")
+importFrom("methods", "as")
+importFrom("stats", "dist", "hclust", "rnorm", "runif", "princomp")
+importFrom("utils", "data")
+
+## Public functions
+export(rancurves, ranpoints, uvscatter, luminance,
+       plothc, plotpc, p3d, swatch, swatchHue, swatchLuminance, ranswatch,
+       computeDistances, plotDistances, invertColors,
+       createPalette, turnGray,
+       colorNames, isccNames)
+
+# public data sets
+export(kelly.colors, green.armytage.colors,
+       alphabet.colors, glasbey.colors,
+       palette36.colors)
+

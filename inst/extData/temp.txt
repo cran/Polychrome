@@ -1,0 +1,267 @@
+v.Pk 1 Vivid Pink	#FFB5BA
+s.Pk 2 Strong Pink	#EA9399
+deep Pk 3 Deep Pink	#E4717A
+l.Pk 4 Light Pink	#F9CCCA
+m.Pk 5 Moderate Pink	#DEA5A4
+d.Pk 6 Dark Pink	#C08081
+p.Pk 7 Pale Pink	#EAD8D7
+gy.Pk 8 Grayish Pink	#C4AEAD
+pkWhite 9 Pinkish White	#EAE3E1
+pkGy 10 Pinkish Gray	#C1B6B3
+v.R 11 Vivid Red	#BE0032
+s.R 12 Strong Red	#BC3F4A
+deep R 13 Deep Red	#841B2D
+v.deep R 14 Very Deep Red	#5C0923
+m.R 15 Moderate Red	#AB4E52
+d.R 16 Dark Red	#722F37
+v.d.R 17 Very Dark Red	#3F1728
+l.gy.R 18 Light Grayish Red	#AD8884
+gy.R 19 Grayish Red	#905D5D
+d.gy.R 20 Dark Grayish Red	#543D3F
+Blackish R 21 Blackish Red	#2E1D21
+rGy 22 Reddish Gray	#8F817F
+d.rGy 23 Dark Reddish Gray	#5C504F
+rBlack 24 Reddish Black	#282022
+v.yPk 25 Vivid Yellowish Pink	#FFB7A5
+s.yPk 26 Strong Yellowish Pink	#F99379
+deep yPk 27 Deep Yellowish Pink	#E66761
+l.yPk 28 Light Yellowish Pink	#F4C2C2
+m.yPk 29 Moderate Yellowish Pink	#D9A6A9
+d.yPk 30 Dark Yellowish Pink	#C48379
+p.yPk 31 Pale Yellowish Pink	#ECD5C5
+gy.yPk 32 Grayish Yellowish Pink	#C7ADA3
+brPk 33 Brownish Pink	#C2AC99
+v.rO 34 Vivid Reddish Orange	#E25822
+s.rO 35 Strong Reddish Orange	#D9603B
+deep rO 36 Deep Reddish Orange	#AA381E
+m.rO 37 Moderate Reddish Orange	#CB6D51
+d.rO 38 Dark Reddish Orange	#9E4732
+gy.rO 39 Grayish Reddish Orange	#B4745E
+s.rBr 40 Strong Reddish Brown	#882D17
+deep rBr 41 Deep Reddish Brown	#56070C
+l.rBr 42 Light Reddish Brown	#A87C6D
+m.rBr 43 Moderate Reddish Brown	#79443B
+d.rBr 44 Dark Reddish Brown	#3E1D1E
+l.gy.rBr 45 Light Grayish Reddish Brown	#977F73
+gy.rBr 46 Grayish Reddish Brown	#674C47
+d.gy.rBr 47 Dark Grayish Reddish Brown	#43302E
+v.O 48 Vivid Orange	#F38400
+brill.O 49 Brilliant Orange	#FD943F
+s.O 50 Strong Orange	#ED872D
+deep O 51 Deep Orange	#BE6516
+l.O 52 Light Orange	#FAB57F
+m.O 53 Moderate Orange	#D99058
+brO 54 Brownish Orange	#AE6938
+s.Br 55 Strong Brown	#80461B
+deep Br 56 Deep Brown	#593319
+l.Br 57 Light Brown	#A67B5B
+m.Br 58 Moderate Brown	#6F4E37
+d.Br 59 Dark Brown	#422518
+l.gy.Br 60 Light Grayish Brown	#958070
+gy.Br 61 Grayish Brown	#635147
+d.gy.Br 62 Dark Grayish Brown	#3E322C
+l.brGy 63 Light Brownish Gray	#8E8279
+brGy 64 Brownish Gray	#5B504F
+brBlack 65 Brownish Black	#28201C
+v.OY 66 Vivid Orange Yellow	#F6A600
+brill.OY 67 Brilliant Orange Yellow	#FFC14F
+s.OY 68 Strong Orange Yellow	#EAA221
+deep OY 69 Deep Orange Yellow	#C98500
+l.OY 70 Light Orange Yellow	#FBC97F
+m.OY 71 Moderate Orange Yellow	#E3A857
+d.OY 72 Dark Orange Yellow	#BE8A3D
+p.OY 73 Pale Orange Yellow	#FAD6A5
+s.yBr 74 Strong Yellowish Brown	#996515
+deep yBr 75 Deep Yellowish Brown	#654522
+l.yBr 76 Light Yellowish Brown	#C19A6B
+m.yBr 77 Moderate Yellowish Brown	#826644
+d.yBr 78 Dark Yellowish Brown	#4B3621
+l.gy.yBr 79 Light Grayish Yellowish Brown	#AE9B82
+gy.yBr 80 Grayish Yellowish Brown	#7E6D5A
+d.gy.yBr 81 Dark Grayish Yellowish Brown	#483C32
+v.Y 82 Vivid Yellow	#F3C300
+brill.Y 83 Brilliant Yellow	#FADA5E
+s.Y 84 Strong Yellow	#D4AF37
+deep Y 85 Deep Yellow	#AF8D13
+l.Y 86 Light Yellow	#F8DE7E
+m.Y 87 Moderate Yellow	#C9AE5D
+d.Y 88 Dark Yellow	#AB9144
+p.Y 89 Pale Yellow	#F3E5AB
+gy.Y 90 Grayish Yellow	#C2B280
+d.gy.Y 91 Dark Grayish Yellow	#A18F60
+yWhite 92 Yellowish White	#F0EAD6
+yGy 93 Yellowish Gray	#BFB8A5
+l.OlBr 94 Light Olive Brown	#967117
+m.OlBr 95 Moderate Olive Brown	#6C541E
+d.OlBr 96 Dark Olive Brown	#3B3121
+v.gY 97 Vivid Greenish Yellow	#DCD300
+brill.gY 98 Brilliant Greenish Yellow	#E9E450
+s.gY 99 Strong Greenish Yellow	#BEB72E
+d.gY 100 Deep Greenish Yellow	#9B9400
+l.gY 101 Light Greenish Yellow	#EAE679
+m.gY 102 Moderate Greenish Yellow	#B9B459
+d.gY 103 Dark Greenish Yellow	#98943E
+p.gY 104 Pale Greenish Yellow	#EBE8A4
+gy.gY 105 Grayish Greenish Yellow	#B9B57D
+l.Ol 106 Light Olive	#867E36
+m.Ol 107 Moderate Olive	#665D1E
+d.Ol 108 Dark Olive	#403D21
+l.gy.Ol 109 Light Grayish Olive	#8C8767
+gy.Ol 110 Grayish Olive	#5B5842
+d.gyOl 111 Dark Grayish Olive	#363527
+l.OlGy 112 Light Olive Gray	#8A8776
+OlGy 113 Olive Gray	#57554C
+OlBlack 114 Olive Black	#25241D
+v.YG 115 Vivid Yellow Green not vivid yellowish green see #129	#8DB600
+brill.YG 116 Brilliant Yellow Green	#BDDA57
+s.YG 117 Strong Yellow Green	#7E9F2E
+deep YG 118 Deep Yellow Green	#467129
+l.YG 119 Light Yellow Green	#C9DC89
+m.YG 120 Moderate Yellow Green	#8A9A5B
+p.YG 121 Pale Yellow Green not pale yellowish green	#DADFB7
+gy.YG 122 Grayish Yellow Green not grayish yellowish green	#8F9779
+s.OlG 123 Strong Olive Green	#404F00
+deep OlG 124 Deep Olive Green	#232F00
+m.OlG 125 Moderate Olive Green	#4A5D23
+d.OlG 126 Dark Olive Green	#2B3D26
+gy.OlG 127 Grayish Olive Green	#515744
+d.gy.OlG 128 Dark Grayish Olive Green	#31362B
+v.yG 129 Vivid Yellowish Green see #115	#27A64C
+brill.yG 130 Brilliant Yellowish Green	#83D37D
+s.yG 131 Strong Yellowish Green	#44944A
+deep yG 132 Deep Yellowish Green	#00622D
+v.deep yG 133 Very Deep Yellowish Green	#003118
+v.l.yG 134 Very Light Yellowish Green	#B6E5AF
+l.yG 135 Light Yellowish Green	#93C592
+m.yG 136 Moderate Yellowish Green	#679267
+d.yG 137 Dark Yellowish Green	#355E3B
+v.d.yG 138 Very Dark Yellowish Green	#173620
+v.G 139 Vivid Green	#008856
+brill.G 140 Brilliant Green	#3EB489
+s.G 141 Strong Green	#007959
+deep G 142 Deep Green	#00543D
+v.l.G 143 Very Light Green	#8ED1B2
+l.G 144 Light Green	#6AAB8E
+m.G 145 Moderate Green	#3B7861
+d.G 146 Dark Green	#1B4D3E
+v.d.G 147 Very Dark Green	#1C352D
+v.p.G 148 Very Pale Green	#C7E6D7
+p.G 149 Pale Green	#8DA399
+gy.G 150 Grayish Green	#5E716A
+d.gy.G 151 Dark Grayish Green not dark greenish yellowish green or dark grayish yellowish green	#3A4B47
+blackish G 152 Blackish Green	#1A2421
+gWhite 153 Greenish White	#DFEDE8
+l.gGy 154 Light Greenish Gray	#B2BEB5
+gGy 155 Greenish Gray	#7D8984
+d.gGy 156 Dark Greenish Gray	#4E5755
+gBlack 157 Greenish Black	#1E2321
+v.bG 158 Vivid Bluish Green	#008882
+brill.bG 159 Brilliant Bluish Green	#00A693
+s.bG 160 Strong Bluish Green	#007A74
+deep bG 161 Deep Bluish Green	#00443F
+v.l.bG 162 Very Light Bluish Green	#96DED1
+l.bG 163 Light Bluish Green	#66ADA4
+m.bG 164 Moderate Bluish Green	#317873
+d.bG 165 Dark Bluish Green	#004B49
+v.d.bG 166 Very Dark Bluish Green	#002A29
+v.gB 167 Vivid Greenish Blue	#0085A1
+brill.gB 168 Brilliant Greenish Blue	#239EBA
+s.gB 169 Strong Greenish Blue	#007791
+deep gB 170 Deep Greenish Blue	#2E8495
+v.l.gB 171 Very Light Greenish Blue	#9CD1DC
+l.gB 172 Light Greenish Blue	#66AABC
+m.gB 173 Moderate Greenish Blue	#367588
+d.gB 174 Dark Greenish Blue	#004958
+v.d.gB 175 Very Dark Greenish Blue	#002E3B
+"v.B 176 Vivid Blue, ultramarine"	#00A1C2
+"brill.B 177 Brilliant Blue, celestial blue"	#4997D0
+"s.B 178 Strong Blue, bright blue"	#0067A5
+"deep B 179 Deep Blue, royal blue"	#00416A
+"v.l.B 180 Very Light Blue, baby blue"	#A1CAF1
+"l.B 181 Light Blue, sky blue"	#70A3CC
+"m.B 182 Moderate Blue, cerulean blue"	#436B95
+"d.B 183 Dark Blue, navy blue"	#00304E
+"v.p.B 184 Very Pale Blue, cloud blue"	#BCD4E6
+"p.B 185 Pale Blue, alice blue"	#91A3B0
+"gy.B 186 Grayish Blue, slate blue"	#536878
+d.gy.B 187 Dark Grayish Blue	#36454F
+blackish B 188 Blackish Blue	#202830
+bWhite 189 Bluish White	#E9E9ED
+l.bGy 190 Light Bluish Gray	#B4BCC0
+bGy 191 Bluish Gray	#81878B
+d.bGy 192 Dark Bluish Gray	#51585E
+bBlack 193 Bluish Black	#202428
+v.pB 194 Vivid Purplish Blue not very purplish blue	#30267A
+brill.pB 195 Brilliant Purplish Blue	#6C79B8
+s.pB 196 Strong Purplish Blue	#545AA7
+deep pB 197 Deep Purplish Blue	#272458
+v.l.pB 198 Very Light Purplish Blue	#B3BCE2
+l.pB 199 Light Purplish Blue	#8791BF
+m.pB 200 Moderate Purplish Blue	#4E5180
+d.pB 201 Dark Purplish Blue	#252440
+v.p.pB 202 Very Pale Purplish Blue	#C0C8E1
+p.pB 203 Pale Purplish Blue	#8C92AC
+gy.pB 204 Grayish Purplish Blue	#4C516D
+v.V 205 Vivid Violet	#9065CA
+brill.V 206 Brilliant Violet	#7E73B8
+s.V 207 Strong Violet	#604E97
+deep V 208 Deep Violet	#32174D
+v.l.V 209 Very Light Violet	#DCD0FF
+l.V 210 Light Violet	#8C82B6
+m.V 211 Moderate Violet	#604E81
+d.V 212 Dark Violet	#2F2140
+v.p.V 213 Very Pale Violet	#C4C3DD
+p.V 214 Pale Violet	#9690AB
+gy.V 215 Grayish Violet	#554C69
+v.P 216 Vivid Purple	#9A4EAE
+brill.P 217 Brilliant Purple	#D399E6
+s.P 218 Strong Purple	#875692
+deep P 219 Deep Purple	#602F6B
+v.deep P 220 Very Deep Purple	#401A4C
+v.l.P 221 Very Light Purple	#D5BADB
+l.P 222 Light Purple	#B695C0
+m.P 223 Moderate Purple	#86608E
+d.P 224 Dark Purple	#563C5C
+v.d.P 225 Very Dark Purple	#301934
+v.p.P 226 Very Pale Purple	#D6CADD
+p.P 227 Pale Purple	#AA98A9
+gy.P 228 Grayish Purple	#796878
+d.gy.P 229 Dark Grayish Purple	#50404D
+blackish P 230 Blackish Purple	#291E29
+pWhite 231 Purplish White	#E8E3E5
+l.pGy 232 Light Purplish Gray	#BFB9BD
+pGy 233 Purplish Gray	#8B8589
+d.pGy 234 Dark Purplish Gray	#5D555B
+pBlack 235 Purplish Black	#242124
+v.rP 236 Vivid Reddish Purple	#870074
+s.rP 237 Strong Reddish Purple	#9E4F88
+deep rP 238 Deep Reddish Purple	#702963
+v.deep rP 239 Very Deep Reddish Purple	#54194E
+l.rP 240 Light Reddish Purple	#B784A7
+m.rP 241 Moderate Reddish Purple	#915C83
+d.rP 242 Dark Reddish Purple	#5D3954
+v.d.rP 243 Very Dark Reddish Purple	#341731
+p.rP 244 Pale Reddish Purple	#AA8A9E
+gy.rP 245 Grayish Reddish Purple	#836479
+brill.pPk 246 Brilliant Purplish Pink	#FFC8D6
+s.pPk 247 Strong Purplish Pink	#E68FAC
+deep pPk 248 Deep Purplish Pink	#DE6FA1
+l.pPk 249 Light Purplish Pink	#EFBBCC
+m.pPk 250 Moderate Purplish Pink	#D597AE
+d.pPk 251 Dark Purplish Pink	#C17E91
+p.pPk 252 Pale Purplish Pink	#E8CCD7
+gy.pPk 253 Grayish Purplish Pink	#C3A6B1
+v.pR 254 Vivid Purplish Red	#CE4676
+s.pR 255 Strong Purplish Red	#B3446C
+deep pR 256 Deep Purplish Red	#78184A
+v.deep pR 257 Very Deep Purplish Red	#54133B
+m.pR 258 Moderate Purplish Red	#A8516E
+d.pR 259 Dark Purplish Red	#673147
+v.d.pR 260 Very Dark Purplish Red	#38152C
+l.gy.pR 261 Light Grayish Purplish Red	#AF868E
+gy.pR 262 Grayish Purplish Red	#915F6D
+White 263 White	#F2F3F4
+l.Gy 264 Light Gray	#B9B8B5
+med.Gy 265 Medium Gray	#848482
+d.Gy 266 Dark Gray	#555555
+Black 267 Black	#222222

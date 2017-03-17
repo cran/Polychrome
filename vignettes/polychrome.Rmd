@@ -1,0 +1,107 @@
+---
+title: "Polychrome: Plots of Many Colors"
+author: "Kevin R. Coombes"
+data: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Polychrome}
+  %\VignetteKeywords{OOMPA,Polychrome,Color Palettes,Palettes}
+  %\VignetteDepends{Polychrome}
+  %\VignettePackage{Polychrome}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+This pretends to be a  vignette for the Polychrome package.  But it
+is actually an exercise in writing vignettes with knitr and markdown
+instead of Sweave and LaTeX.
+
+## Getting Started
+
+As usual, we start by loading the package:
+
+```{r}
+library(Polychrome)
+```
+
+Next, we can look at one of the color palettes it provides.
+
+```{r}
+mypal <- kelly.colors(22)
+```
+
+```{r fig.width=7, fig.height=5}
+swatch(mypal)
+```
+
+## Resorted barplots
+
+To get a better idea of whether colors are distinguishable, we can
+sort them by hue:
+```{r fig.width=7, fig.height=5}
+swatchHue(mypal)
+```
+
+or by luminnace:
+```{r fig.width=7, fig.height=5}
+swatchLuminance(mypal)
+```
+
+or in random order:
+```{r fig.width=7, fig.height=5}
+ranswatch(mypal)
+```
+
+## Scatter Plots
+Some colors that work well in barplots may work less well in scatter
+plots.  To test that possibility, we can generate some random points
+and plot them. The next line of code generates 14 points from each
+color in the "alphabet" palette.
+
+```{r fig.width=7, fig.height=5}
+pal2 <- alphabet.colors(26)
+ranpoints(pal2, 14)
+```
+
+Our standard way to think about colors is in the L\*u\*v\* color space
+model defined by the CIE.  The next plot shows how the points in the
+palette are distributed in the u-v subspace.
+```{r fig.width=7, fig.height=5}
+uvscatter(pal2)
+```
+
+We can also show the associated luminance, L.
+```{r fig.width=7, fig.height=5}
+luminance(pal2)
+```
+
+## Plotting Curves
+We can also test if a palette is useful for drawing a graph full of
+different curves rarther than points.
+```{r fig.width=7, fig.height=5}
+rancurves(pal2)
+```
+
+## Color Similarity
+We use L\*u\*v\* color space because perceptual distinguishability seems
+to be closely related to Euclidean distance in this space.  To get
+another view of which colors are most similar, we can perform
+hierarchical clustering of colors using this representation.
+```{r fig.width=7, fig.height=5}
+plothc(pal2)
+```
+We can also perform principal components in L\*u\*v\* space to display
+a projectionm that tries to preserve distances.
+```{r fig.width=7, fig.height=5}
+plotpc(pal2)
+```
+
+## Grayscale
+One further consideration that should be kept in mind when creating
+color palettes is that not every potential viewer has normal color
+vision. One way to test if a color palette will remain useful in this
+context is to convert it to gray scale.
+
+```{r fig.width=7, fig.height=5}
+grayed <- turnGray(pal2)
+swatchLuminance(grayed)
+```
