@@ -1,17 +1,213 @@
-			Dear Emacs, please make this -*-Text-*- mode!
-	**************************************************
-	*						 *
-	*	       0.1 SERIES NEWS			 *
-	*						 *
-	**************************************************
+Polychrome v0.9.3 (Release Date: 2017-06-06)
+==============
+
+Changes:
+
+* Changed 'computeDistances' so it now only returns the vector of
+  minimal relative distances, in order to improve usability.
+
+Polychrome v0.9.0 (Release Date: 2017-04-28)
+==============
+
+Changes: 
+
+* Added a second vignettte, focused on creating palettes.
+
+* Removed the 'turnGray' function, since it duplicates functionality
+  from colorspace::desaturate.
+
+* Added error checking to the arguments of most of the functions.
+
+* Changed 'swatch' so it uses the luminance to decide whether to write
+  color labels in white or black.
+
+* Changed the 'computeDistances' function so it includes the default
+  starting point, thus obviating the need for adding one when you
+  count the number of separated colors. (Technically, the distance
+  for  the first point should be infinite, but we set it to the
+  distance to the second point to make it easier to plot.)
+
+* Changed the 'plotDistances' function so it now colors the points.
+
+Non-Visible Changes
+
+* Added test code for converting different kinds of color
+  specifications into hex-strings.
+
+Polychrome v0.8.3 (Release Date: 2017-04-25)
+==============
+
+Changes: 
+
+* Cleaned up typos and other problems in the man pages.
+
+Adminstrative:
+
+* Finally got around to bringing this NEWS file up-to-date.
+
+Polychrome v0.8.2 (Release Date: 2017-03-16)
+==============
+
+Changes: 
+
+* Added an "extData" folder to the installation directory to use
+  chromosome-linked AML data as an example of how one might apply the
+  package to genomics.
+
+Polychrome v0.8.1 (Release Date: 2016-09-29)
+==============
+
+Administrative:
+
+* Made sure all the source files included consistent copyright lines. 
+
+Polychrome v0.8.0 (Release Date: 2016-09-15)
+==============
+
+Changes: 
+
+* (Backwards Incompatible) Changed the names of all the barplot-based
+  viewers to replace the cryptic "bp" with "swatch". 
+
+Polychrome v0.7.2 (Release Date: 2016-08-21)
+==============
+
+Changes: 
+
+* Made the 'computeDistances' function (which was used internally by
+  the 'plotDistances' routine) user-visible.
+
+Polychrome v0.7.0 (Release Date: 2016-08-20)
+==============
+
+Changes: 
+
+* Added the 'glasbey.colors' palette,with 32 colors.
+
+Bug Fixes:
+
+* Modified the creation of our 'palette36' to use sRGB instead of RGB
+  internally.
+
+Polychrome v0.6.5 (Release Date: 2016-08-19)
+==============
+
+Changes: 
+
+* Added the 'colorNames' function to assign UNIX/X11 color names to
+  palettes.
+
+* Added '...' arguments to 'uvScatter' and 'luminance' functions,
+  allowing users more control over the graphical displays.
+
+Polychrome v0.6.3 (Release Date: 2016-08-17)
+==============
+
+Changes: 
+
+* Added the 'invertColors' function, allowing for display of colors
+  against a black background.
+
+* Added an additional argument M to the 'createPalette' funicton,
+  giving the user control over the number of potential colors
+  generated randomly during processing.
+
+* Added the 'plotDistances' viewer to display successive distances
+  between colors in LUV space.
+
+Polychrome v0.6.0 (Release Date: 2016-08-16)
+==============
+
+Changes: 
+
+* Added a new viewer, 'plothc', which displays a palette as a
+  dendrogram produced using hierarchical clustering based on Euclidean
+  distance in LUV space.
+
+Polychrome v0.5.0 (Release Date: 2016-05-16)
+==============
+
+Changes: 
+
+* Finished the basic vignette.
+
+Polychrome v0.5.0 (Release Date: 2016-05-16)
+==============
+
+Changes:
+
+* Added an optional 'range' argument to the 'createPalette' function,
+  allowing users to control the range of luminance values.
+
+Polychrome v0.4.2 (Release Date: 2016-05-11)
+==============
+
+Changes:
+
+* Started writing basic vignette.
+
+Polychrome v0.4.1 (Release Date: 2016-05-09)
+==============
+
+Changes:
+
+* First complete draft of man pages.
+
+Polychrome v0.3.16 (Release Date: 2016-05-09)
+==============
+
+Changes: 
+
+* Added an "isccNames" function so users can assign color names to any
+  palette.  
+
+* Added the "palette36.colors' function to access our new standard
+  36-color palette.
+
+* Added our own 'alphabet.colors' palette, and sorted it
+  alphabetically.
+
+* Exported the 'makegray' function.
+
+Bug Fixes:
+
+* Fixed a bug in 'makePalette' so it now returns the number of colors
+  you asked for instead of the whole palette.
+
+Administrative:
+
+* First drafts of some man pages.
 
 
-		CHANGES IN R VERSION 0.1.0
+Polychrome v0.3.2 (Release Date: 2016-04-15)
+==============
 
-GENERAL
+Changes:
 
-    o	Initial version of package
+* Added iscc color name data as a proper R object loadable as data.
 
-ADMINISTRATIVE
+Polychrome v0.3.1 (Release Date: 2016-03-23)
+==============
 
-    o	Changed the LICENSE from Artistic 2.0 to Apache 2.0
+Changes:
+
+* Added historical palettes 'kelly.colors' and 'green.armytage.colors'
+
+* Added 'iscc.txt' to the data directory.
+
+Internal:
+
+* Cleaned up code to geneate our own 36-color and alphabet palettes.
+
+* Added "makegray" function.
+
+Polychrome v0.1.0 (Release Date: 2016-03-22)
+==============
+
+General:
+
+* Intitial version of package
+
+Administrative:
+
+* Changed the LICENSE from Artistic 2.0 to Apache 2.0

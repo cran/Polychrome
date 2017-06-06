@@ -60,7 +60,7 @@ p3d(colorset, main=deparse(substitute(colorset)))
   (by hue or by luminance, respectively), before producing the
   barplot.  The goal of these functions is to make sure that similar
   colors can be distinguished by placing them close together. The final
-  fucntion, \code{ranswatch}, randomly sorts the colors, to help decide if
+  function, \code{ranswatch}, randomly sorts the colors, to help decide if
   similar colors are identifiable when they are relatively far apart.
 
   The \code{p3d} function plots the palette colors as spheres in
@@ -74,7 +74,7 @@ p3d(colorset, main=deparse(substitute(colorset)))
   The \code{plothc} function performs hierarchical clustering on the
   colors (using Euclidan distance in CIE L*u*v* color space and Ward's
   linkage) and displays the resulting dendrogram. The \code{plotpc}
-  function uses the same distance metric to compute and plot pincipal
+  function uses the same distance metric to compute and plot principal
   components.
 
 }
@@ -86,7 +86,7 @@ p3d(colorset, main=deparse(substitute(colorset)))
   \code{swatchLuminance}), however, return the vector of bar-centers, which
   can be used to add other information to the plot. The \code{plothc}
   function returns the dendrogram, and the \code{plotpc} function
-  returns the principal compnents object.
+  returns the principal components object.
 }
 \author{Kevin R. Coombes <krc@silicovore.com>}
 \seealso{

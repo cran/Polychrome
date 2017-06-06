@@ -1,0 +1,258 @@
+---
+title: "Polychrome: Creating New Palettes"
+author: "Kevin R. Coombes"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Polychrome}
+  %\VignetteKeywords{OOMPA,Polychrome,Color Palettes,Palettes}
+  %\VignetteDepends{Polychrome}
+  %\VignettePackage{Polychrome}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r opts,echo=FALSE}
+knitr::opts_chunk$set(fig.width=7, fig.height=5)
+```
+
+Although the <tt>Polychrome</tt> package ships with several pre-built
+multicolored palettes, it also contains tools to build more.  In this
+vignette, we expain how to use the <tt>createPalette</tt> function for
+this purpose.
+
+# Getting Started
+
+As usual, we start by loading the package:
+
+```{r lib}
+library(Polychrome)
+```
+
+Here are the arguments of the main function.
+```{r args}
+args(createPalette)
+```
+
++ <tt>N</tt> is the number of colors to include in the palette
++ <tt>seedcolors</tt> is a list of one or more starting colors that you would
+like included in the palette.
++ <tt>prefix</tt> is a character string used to create default names for the
+palette colors.
++ <tt>range</tt> is a numeric vector of length 2 indicating the minimum and
+maximum desired luminance for the palette.
++ <tt>M</tt> is an an integer representing the number of random colors to be
+generated in order to create the palette.
+
+## Recommendations
+
+1. The seed colors usually have a small effect on the overall palette,
+but they can change the order.  White and black appear to be
+exceptions; they tend not to be included in the palette unless forced.
+One reason to use more seed colors would be to aumgent an existing
+small palette by adding distinguishable colors.
+2. We show below that an upper bound on a good set of colors is likely to be
+around 40. It may be better in the long run to build a palette that you like
+of about this size, and then just use colors from the beginning if you don't
+need that many.
+3. The speed of the algorithm mainly depends on <tt>M</tt>. You get a richer
+selection of colors with larger <tt>M</tt>. We have been successful using the
+default of 50000.
+4. The range depends on whether you expect to use a light background (take 
+<tt>range = c(10, 60)</tt>), a dark background (take <tt>range = c(55,
+95)</or both (take <tt>range = c(30, 80)</tt>).
+5. Unless you really need colors called X1, ..., X37, you are probably better
+off using the <ttcolorNames</tt> function to assign meaningful names after
+creating the palette.
+
+# A Small Palette
+We'll start with a simple (but fast) example.
+```{r first10}
+set.seed(723451) # for reproducibility
+firstpal <- createPalette(10, c("#010101", "#ff0000"), M=1000)
+firstpal
+```
+
+The probably surprising result is that the seed colors are actually
+_not_ included in the final palette. There are two reasons for this.
+First, the colors 'black' and 'red' are outside the specified
+(default) luminance range. So, they are replaced by the closest
+randomly generated colors that are inside the range.  But that leads
+us to the second reason. We specified a small value of <tt>M</tt>.
+The algorithm operates by randomly selecting a set of potential colors
+in the desired range, and will eventually assemble the palette from
+this set.  With only 1000 candidates, there may not be anything that
+looks close to pure red or pure black in the set of candidates.
+
+```{r firstswatch, fig.cap="First palette"}
+swatch(firstpal)
+```
+
+## Do the seeds matter?
+Here is the palette that we get if we just start with the color black. Note that
+we keep resetting the random seed -- the one for the random number generator --
+to make sure we are choosing from the same set of randomly generated candidates.
+```{r second, fig.cap="A pallete from a single black seed."}
+set.seed(723451) # for reproducibility
+second <- createPalette(10, c("#010101"), M=1000)
+swatch(second)
+```
+
+This palette is essentially indistinguishable from the first one. However, here is
+what happens if we just start with the color red.
+```{r third, fig.cap="A palette from a single red seed."}
+set.seed(723451) # for reproducibility
+third <- createPalette(10, c("#ff0000"), M=1000)
+swatch(third)
+```
+
+The red, green, and blue triumvirate stays near the top of the list, but black has
+disappeared. What happens if we instead start with green and blue?
+```{r fourth, fig.cap="A blue and green seeded palette."}
+set.seed(723451) # for reproducibility
+fourth <- createPalette(10, c("#00ff00", "#0000ff"), M=1000)
+swatch(fourth)
+```
+
+Except for the forced reordering at the start, we get nearly the same palette.
+So, let's instead try starting with cyan, magenta, and yellow.
+```{r fifth, fig.cap="A CMY seeded palete."}
+set.seed(723451) # for reproducibility
+fifth <- createPalette(10, c("#00ffff", "#ff00ff", "#ffff00"), M=1000)
+swatch(fifth)
+```
+
+We see that the initial seed colors have a relatively small effect.  This result
+should not be unexpected based on the "greedy" nature of the underlying algorithm,
+which tries at each step to find the color that is most distant from everything
+already included in the list.  The vertices of the polyhedron in three-dimensional
+LUV space include the usual primary colors.
+
+# How many good colors can we find?
+Now we'd like to examine how big we think we can realistically make <tt>N</tt>,
+the number of distinguishable colors. We can estimate this by first estimating
+the volume  of the visible region of LUV space. We can start by determining the
+convex hull of the UV projection.  We saw in the manuscript that our 36-color
+palette uses almost all of the visible region. So (for speed as well as
+simplicity), we are going to work with that palette.
+
+First, we have to get the LUV coordinates of the colors.
+```{r luv36}
+library(colorspace)
+p36 <- palette36.colors(36)
+luvmat <- as(hex2RGB(p36), "LUV")
+y <- luvmat@coords
+```
+Now we can use a function from the <tt>grDevices</tt> package to compute the
+convex hull.
+```{r hull, fig.width=6,fig.height=6,fig.cap="The convex hull of the UV coordinates of the 36-color palette."}
+hull <- y[chull(y[,2], y[,3]), 2:3]
+uvscatter(p36)
+polygon(hull[,1], hull[,2], lwd=2)
+```
+
+The next step is to compute the area of the convex hull. While there are R
+packages that include functions to do this computation, the algorithm is
+sufficiently easy that it hardly seems worth it to load another package.
+```{r area}
+hullaug <- rbind(hull, hull[1,])
+N <- nrow(hullaug)
+fst <-sum(hullaug[1:(N-1), 1]*hullaug[2:N, 2] )
+snd <- sum(hullaug[2:N, 1]*hullaug[1:(N-1), 2] )
+area <- (snd - fst)/2
+area
+```
+So, a crude (over)estimate of the volume of the viewable region of LUV space is
+to take the range of L values (0--100) and multiple it times the UV area. This
+is an overestimate for two reasons. First, we can't actually use the entire
+viewable range of luminances agains any single background, so the factor of 100
+is probably closer to 60. Second, not every combination of L-U-V values in this
+region designates an actual color.
+```{r uppervol}
+overvol <- 100*area
+overvol
+```
+
+Now, we want colors to be 40 units apart to be reliably distinguishable by most
+viewers. So, each time we pick a color, it should "occupy" a sphere of radius 20
+to avoid picking indistinguishable colors.  The volume of such a sphere is:
+```{r volsphere}
+sphere <- 4/3*pi*20^3
+sphere
+```
+
+To get the most generous (over)estimate of the number of colors, we pretend for
+a moment that we can pack spheres into the space with minimal waste. By the
+Kepler conjecture, we know that this means that the spheres can occupy about
+74% of the volume.
+```{r fat}
+100 * area/sphere *0.74
+
+60 * area/sphere *0.74
+```
+If we could use the full range of luminances, we could get about 82 colors. If
+we can only use a range of luminance values about 60 units wide, then we can at
+most hope to get 50 distinct colors.
+
+### Improving the estimate
+We can empirically improve our estimate of the volume of the visible portion of
+LUV space.  We start by generating a tight, regularly spaced grid of values.
+```{r what}
+L <- 0:100
+U <- -60:150
+V <- -150:150
+luv <- cbind(L = rep(L, length(U)*length(V)),
+             U = rep(rep(U, each=length(L)), times=length(V)),
+             V = rep(V, each=length(L)*length(U)))*1.0
+```
+Next, we convert the LUV coordinates into hexadecimal representations in RGB space.
+```{r hexify}
+tested <- LUV(luv)
+co <- tested@coords
+```
+Whenever the conversion fails (yielding an <tt>NA</tt> value), the LUV coordinates
+were not visible. So, we can estimate the fraction of the regular grid that is
+visible:
+```{r }
+he <- hex(tested)
+summary(is.na(he))
+mean(!is.na(he))
+```
+That is roughly 20%.  Now we look at how many spheres we could pack into this
+space.
+```{r}
+VOL <- diff(range(L)) * diff(range(U)) * diff(range(V)) * 0.205
+VOL
+VOL/sphere * 0.74
+```
+Hmm. This computation suggest that we can only find about 28 distinguishable
+colors. Since we have examples of palettes with more colors than this, we must
+now somehow be _underestimating_ the value.
+
+But it's clear why.  Many of the spheres can be placed on the boundary, that is,
+along the faces, edges, or even vertices of the polyhedron.  In that case, half
+or more of their volume sticks outsde the polyhedron. If we crudely estimate
+that half of the volume of half of the spheres can be ignored, then this
+adjustment roughly undoes the correction for the sphere packing density. 
+```{r final}
+VOL/sphere
+```
+So, our final estimate is that the maximum number of distinguishable colors is 
+roughly 38 or 39.  Being generous (and tending to favor round numbers), we're
+going to take it to be about 40.
+
+# Computational Complexity
+
+The final parameter we want to look at is <tt>M</tt>, the number of candidate
+colors that we search through. In general, we expect the time needed to run the
+algorithm to be approximately <tt>N*M</tt>, since we must search through all
+<tt>M</tt> candidates for each of the <tt>N</tt> desired colors. The trade-off,
+of course, is that we can find more colors that are distinguishable with more
+candidates. Here we increase <tt>M</tt> from 1000 to 10000.
+
+```{r last10, fig.cap="Palette with more candidate colors."}
+set.seed(723451) # for reproducibility
+lastpal <- createPalette(10, c("#010101", "#ff0000"), M=10000)
+lastpal
+swatch(firstpal)
+swatch(lastpal)
+```

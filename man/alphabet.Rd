@@ -3,7 +3,8 @@
 \docType{data}
 \title{A 26-Color Palette}
 \description{
-  A palette composed of 36 distinctive colors.  
+  A palette composed of 26 distinctive colors with names corresponding
+  to letters of the alphabet.  
 }
 \usage{data(alphabet)}
 \format{

@@ -8,7 +8,7 @@
   National Bureau of Standards, developed a list of 267 standardized
   color names.  Many software tools (including R) also use a
   (non-standardized) list of color names derived from the original X11
-  list on early UJNIX systems. We provide tools to convert hexadecimal
+  list on early UNIX systems. We provide tools to convert hexadecimal
   colors to both sets of names.
 }
 \usage{

@@ -1,6 +1,7 @@
 # Copyright (C) Kevin R. Coombes, 2016
 
 colorNames <- function (colorset)  {
+  colorset <- xform(colorset)
   # note: should only use 'col2rgb' for color() names
   rigby <- t(col2rgb(colors())) # R-G-B matrix of
   rownames(rigby) <- colors()   #  known color names
@@ -20,6 +21,7 @@ colorNames <- function (colorset)  {
 }
 
 isccNames <- function(colorset) {
+  colorset <- xform(colorset)
   data("iscc", package="Polychrome", envir=environment())
   iscc <- get("iscc", envir=environment())
   munsell <- as(hex2RGB(iscc$Hex), "LUV")

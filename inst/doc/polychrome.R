@@ -36,6 +36,6 @@ plothc(pal2)
 plotpc(pal2)
 
 ## ----fig.width=7, fig.height=5-------------------------------------------
-grayed <- turnGray(pal2)
+grayed <- colorspace::desaturate(pal2)
 swatchLuminance(grayed)
 

@@ -11,9 +11,10 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
 ---
 
-This pretends to be a  vignette for the Polychrome package.  But it
-is actually an exercise in writing vignettes with knitr and markdown
-instead of Sweave and LaTeX.
+In this vignette, we describe how to use the palettes that ship with
+the <tt>Polychrome</tt> package. We also describe the tools that are
+provided to view palettes in different settings and different kinds
+of plots.
 
 ## Getting Started
 
@@ -41,7 +42,7 @@ sort them by hue:
 swatchHue(mypal)
 ```
 
-or by luminnace:
+or by luminance:
 ```{r fig.width=7, fig.height=5}
 swatchLuminance(mypal)
 ```
@@ -99,9 +100,11 @@ plotpc(pal2)
 One further consideration that should be kept in mind when creating
 color palettes is that not every potential viewer has normal color
 vision. One way to test if a color palette will remain useful in this
-context is to convert it to gray scale.
+context is to convert it to gray scale. We do this by converting to
+grayscale using the desaturate function fromth  colorspace package,
+and then preparing a barplot by luminance. 
 
 ```{r fig.width=7, fig.height=5}
-grayed <- turnGray(pal2)
+grayed <- colorspace::desaturate(pal2)
 swatchLuminance(grayed)
 ```

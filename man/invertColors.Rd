@@ -9,12 +9,12 @@
 invertColors(...)
 }
 \arguments{
-  \item{\dots}{Other graphiocal parameters ot be given to \code{par}.}
+  \item{\dots}{Other graphical parameters to be given to \code{par}.}
 }
 \details{
   This function changes the default color scheme of the current graphics
-  device fo white on black. Note that since \code{invertColors} rests
-  the code{bg} parameter, you should avoid passing in a new default
+  device to white on black. Note that since \code{invertColors} resets
+  the \code{bg} parameter, you should avoid passing in a new default
   value for the \code{col} parameter.
 }
 \value{

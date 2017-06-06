@@ -9,7 +9,7 @@
 
 \title{Polychrome Color Palettes}
 \description{
-  Four color palettes each containing at least 22 different,
+  Five color palettes each containing at least 22 different,
   distinguishable colors.
 }
 \usage{

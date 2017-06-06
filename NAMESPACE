@@ -7,7 +7,7 @@ import(colorspace)
 import(rgl)
 
 importFrom("graphics", "barplot", "lines", "mtext", "text", "par", "abline")
-importFrom("grDevices", "col2rgb", "colors")
+importFrom("grDevices", "col2rgb", "colors", "rgb")
 importFrom("methods", "as")
 importFrom("stats", "dist", "hclust", "rnorm", "runif", "princomp")
 importFrom("utils", "data")
@@ -16,7 +16,7 @@ importFrom("utils", "data")
 export(rancurves, ranpoints, uvscatter, luminance,
        plothc, plotpc, p3d, swatch, swatchHue, swatchLuminance, ranswatch,
        computeDistances, plotDistances, invertColors,
-       createPalette, turnGray,
+       createPalette,
        colorNames, isccNames)
 
 # public data sets
