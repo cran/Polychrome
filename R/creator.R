@@ -16,12 +16,16 @@ upd <- function(idx, luv, mind) {
   minOf2(mind, temp)
 }
 
-createPalette <- function(N, seedcolors, prefix="NC", range=c(30, 90), M=50000) {
+createPalette <- function(N, seedcolors, prefix="NC", range=c(30, 90),
+                          target = c("normal", "protanope", "deuteranope", "tritanope"),
+                          M=50000) {
   DARK <- min(range)
   LIGHT <- max(range)
   bigset <- as.matrix(data.frame(R=sample(0:255, M, replace=TRUE),
                                  G=sample(0:255, M, replace=TRUE),
                                  B=sample(0:255, M, replace=TRUE)))/255
+  target <- match.arg(target)
+  if (target != "normal") bigset <- colorDeficit(bigset, target)
   bigrgb <- RGB(bigset)
   bigluv <- as(bigrgb, "LUV")
   toodark <- bigluv@coords[,1] < DARK

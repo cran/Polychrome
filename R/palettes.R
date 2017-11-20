@@ -51,29 +51,43 @@ makePalette <- function(n, colorset) {
   colorset[1:n]
 }
 ####################################
-palette36.colors <- function(n=36) {
+palette36.colors <- function(n = 36) {
   data("palette36", package="Polychrome", envir=environment())
   palette36 <- get("palette36", envir=environment())
   return (makePalette(n, palette36))
 }
 
 ####################################
-alphabet.colors <- function(n=26) {
+alphabet.colors <- function(n = 26) {
   data("alphabet", package="Polychrome", envir=environment())
   alphabet <- get("alphabet", envir=environment())
   return (makePalette(n, alphabet))
 }
 
 ####################################
-glasbey.colors <- function(n=32) {
+glasbey.colors <- function(n = 32) {
   data("glasbey", package="Polychrome", envir=environment())
   glasbey <- get("glasbey", envir=environment())
   return (makePalette(n, glasbey))
 }
 
 ####################################
+light.colors <- function(n = 24) {
+  data("Light24", package="Polychrome", envir=environment())
+  light <- get("Light24", envir=environment())
+  return (makePalette(n, light))
+}
+
+####################################
+dark.colors <- function(n = 24) {
+  data("Dark24", package="Polychrome", envir=environment())
+  dark <- get("Dark24", envir=environment())
+  return (makePalette(n, dark))
+}
+
+####################################
 # Kelly
-kelly.colors <- function(n=22) {
+kelly.colors <- function(n = 22) {
   kelly <- c(
     white = "#f2f3f4",
     black = "#222222",

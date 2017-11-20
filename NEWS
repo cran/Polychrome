@@ -1,3 +1,24 @@
+Polychrome v1.0.0 (Release Date: 2017-11=18)
+==============
+
+New Features:
+
+* Added a new function, 'colorDeficit', that converts any palette to the
+  equivalent that would be seen with a specifric form of color deficit
+  vision. 
+
+* Added two new precomputed palettes, Light24 and Dark24.
+
+Changes:
+
+* Added a new option to 'createPalette' that atempts to create useful
+  palettes for individuals whose vision has specific color deficits.
+
+Bug Fixes:
+
+* Fixed a bug in 'computeDistances' and 'plotDistances' when a palette
+  contains two identical colors.
+
 Polychrome v0.9.3 (Release Date: 2017-06-06)
 ==============
 

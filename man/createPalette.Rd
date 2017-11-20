@@ -7,7 +7,9 @@
   color space.
 }
 \usage{
-createPalette(N, seedcolors, prefix="NC", range=c(30, 90), M=50000)
+createPalette(N, seedcolors, prefix = "NC", range = c(30, 90),
+              target = c("normal", "protanope", "deuteranope", "tritanope"),
+              M = 50000)
 }
 \arguments{
   \item{N}{An integer, the size of the palette to create.}
@@ -17,6 +19,8 @@ createPalette(N, seedcolors, prefix="NC", range=c(30, 90), M=50000)
     names of the colors.}
   \item{range}{A numeric vector limitng the range of allowed luminance
     values.}
+  \item{target}{A character string indicating the kind of color vision
+    for which the palette is intended.}
   \item{M}{An integer; the number of random colors to generate while
     creating palettes.}
 }
@@ -25,7 +29,7 @@ createPalette(N, seedcolors, prefix="NC", range=c(30, 90), M=50000)
   colors was related to their Euclidean distance in the L*u*v* color
   space coordinates, as defined by the International Commisision on
   Illumination (CIE). The \code{createPalette} function implements a
-  greedy algorithm to find colors that are well-spread-out in L*U*v*
+  greedy algorithm to find colors that are well-spread-out in L*u*v*
   space.  The algorithm begins by generating a random set of 50,000
   colors; these colors are restricted to those whose luminance lies
   between 30 and 90.  Then, given one or more starting colors, the
@@ -43,7 +47,7 @@ createPalette(N, seedcolors, prefix="NC", range=c(30, 90), M=50000)
   1982; 21(16):2936--9.
 }
 \seealso{
-  \code{\link{Color Palettes}}
+  \code{\link{Color Palettes}}, \code{\link{colorDeficit}}.
 }
 \examples{
 seed <- c("#ff0000", "#00ff00", "#0000ff")

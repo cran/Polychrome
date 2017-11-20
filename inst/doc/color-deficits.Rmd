@@ -1,0 +1,173 @@
+---
+title: "Polychrome: Color Deficits"
+author: "Kevin R. Coombes"
+data: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Polychrome}
+  %\VignetteKeywords{OOMPA,Polychrome,Color Palettes,Palettes}
+  %\VignetteDepends{Polychrome}
+  %\VignettePackage{Polychrome}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r opts, echo=FALSE}
+knitr::opts_chunk$set(fig.width=8, fig.height=5)
+```
+# Introduction
+
+There are three main forms of color-deficient vision, depending on
+which of the three types of cones (red, green, or blue) are missing
+or defective in the eyes of an individual.
+
+1. Deuteranopes (about 6% of men) are red-blind, and so they have
+   trouble distinguishing red from green.
+2. Protanopes (about 2% of men) are green-blind, and they also have
+   trouble distinguishing red from green.
+3. Tritanopes (less than 1% of men) are blue-blind, asnd they have
+   trouble distinguishing blue from yellow.
+
+<tt>Polychrome</tt> includes facilities to simulate different forms of
+color deficit and to create palettes that can be used by individuals
+with color deficient vision. This vignette describes those facilities.
+
+# Red-Green Color Maps
+We start by loading the package.
+```{r pkgs}
+library(Polychrome)
+```
+Next, we create the common "standard" color map used by 
+bioinformaticians to draw heatmaps. 
+```{r rg, fig.cap="Common red-green palette."}
+rg <- colorRampPalette(c("red", "black", "green"))(64)
+image(matrix(1:64), col=rg)
+```
+
+Now, we convert it to what would be seen by a deuteranope.
+```{r deut, fig.cap="Deuteranopes' view of the common red-green palette."}
+rg.deut <- colorDeficit(rg, "deut")
+image(matrix(1:64), col=rg.deut)
+```
+
+We can also convert it to what would be seen by a protanope...
+```{r prot, fig.cap="Protanopes' view of the common red-green palette."}
+rg.prot <- colorDeficit(rg, "prot")
+image(matrix(1:64), col=rg.prot)
+```
+
+... or a tritanope.
+```{r trit, fig.cap="Tritanopes' view of the common red-green palette."}
+rg.trit <- colorDeficit(rg, "trit")
+image(matrix(1:64), col=rg.trit)
+```
+
+# Large Qualitative Palettes
+We repeat those operations for the 26-color alphabet palette from
+<tt>Polychfome</tt>. 
+
+```{r alfa, fig.cap = "The 26-color alphabet palette."}
+alfa <- alphabet.colors(26)
+swatch(alfa)
+```
+
+```{r adeut, fig.cap = "The 26-color alphabet palette, as seen by a deuteranope."}
+alfa.deut <- colorDeficit(alfa, "deut")
+swatch(alfa.deut)
+```
+
+```{r aprot, fig.cap = "The 26-color alphabet palette, as seen by a protanope."}
+alfa.prot <- colorDeficit(alfa, "prot")
+swatch(alfa.prot)
+```
+
+```{r atrit, fig.cap = "The 26-color alphabet palette, as seen by a tritanope."}
+alfa.trit <- colorDeficit(alfa, "trit")
+swatch(alfa.trit)
+```
+
+# Creating New Palettes
+We can also use the <tt>createPalette</tt> function to create new palettes
+designed for individuals with color deficits. This operation requires us to
+use the <tt>target</tt> option of the function. The default value of "normal"
+assumes that the target audience consists of individuals with normal color
+vision.
+
+```{r cp1, fig.cap="A palette designed for deuteranopes."}
+cp <- createPalette(20, "#111111", target="deuteranope")
+names(cp) <- colorNames(cp)
+swatch(cp)
+```
+
+
+```{r cp2, fig.cap = "A palette designed for protanopes."}
+cp <- createPalette(20, "#111111", target="protanope")
+names(cp) <- colorNames(cp)
+swatch(cp)
+```
+
+
+```{r cp3, fig.cap = "A palette designed for tritanopes."}
+cp <- createPalette(20, "#111111", target="tritanope")
+names(cp) <- colorNames(cp)
+swatch(cp)
+```
+
+
+## A Small Color-Safe Palette
+
+Here we try to build a small palette that has at least some chance of being
+useful for people with any of the three forms of color-blindness. First, we
+get a slightly larger starting paltte, and convert it to simulate each of
+the three forms of color deficits.
+```{r dists}
+p34 <- palette36.colors(36)[3:36]
+names(p34) <- colorNames(p34)
+p34.deut <- colorDeficit(p34, "deut")
+p34.prot <- colorDeficit(p34, "prot")
+p34.trit <- colorDeficit(p34, "trit")
+```
+
+Next, we reorder the palettes by distinguishability.
+```{r shift}
+shift <- function(i, k=34) c(i, 1:(i-1), (1+i):k)
+co <- shift(13)
+pd <- computeDistances(p34.deut[co])
+pp <- computeDistances(p34.prot[co])
+pt <- computeDistances(p34.trit[co])
+```
+
+Now we use the ranks from this ordering to compute a distinguishability score.
+```{r score}
+rd <- rank(pd)[order(names(pd))]
+rp <- rank(pd)[order(names(pp))]
+rt <- rank(pd)[order(names(pt))]
+score <- 2*rd + 1.5*rp + rt
+```
+
+Now we show the top ten colors (ranked by this score) , adjusting for different
+color deficits.
+```{r, fig.width=8, fig.height=7, fig.cap="Color safe palette."}
+x <- p34[names(rev(sort(score)))][1:10]
+y <- colorDeficit(x, "deut")
+z <- colorDeficit(x, "prot")
+w <- colorDeficit(x, "trit")
+
+opar <- par(mfrow=c(2,2))
+swatch(x, main="Normal")
+swatch(y, main="Deuteranope")
+swatch(z, main="Protanope")
+swatch(w, main="Tritanope")
+```
+
+```{r, echo=FALSE}
+par(opar)
+```
+
+# Conclusion
+We have illustrated how to convert arbitrary palettes into versions that
+simulate different forms of color deficits. We have also shown how to
+create palettes specifically for individuals with different color deficits.
+Finally, we have created a ten-color palette that has a reasonable chance
+of working simultaneously for individuals with any of the three most common
+form of color defictis.
+

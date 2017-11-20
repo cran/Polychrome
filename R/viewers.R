@@ -140,6 +140,10 @@ ranswatch  <- function(colorset,
 
 luvDistances <- function(colorset) {
   colorset <- xform(colorset)
+  if (any(dup <- duplicated(colorset))) {
+    reserved <- colorset[dup]
+    colorset <- colorset[!dup]
+  }
   # work in LUV space
   luvmat <- as(hex2RGB(colorset), "LUV")
   if(any(is.na(luvmat@coords))) {
@@ -147,6 +151,7 @@ luvDistances <- function(colorset) {
   }
   # take the first color as the starting point
   selected <- 1
+  names(selected) <- names(colorset)[1]
   mind <- d2(selected, luvmat)
   dd <- NULL
   # loop through, finding the most well-seaprated color at each iteration
@@ -158,7 +163,14 @@ luvDistances <- function(colorset) {
   }
   dd <- c(max(dd), dd)
   names(dd)[1] <- names(colorset)[1]
-  list(colors=colorset[selected], distances=dd)
+  colors <- colorset[selected]
+  if (any(dup)) {
+    colors <- c(colors, reserved)
+    extra <- rep(0, length(reserved))
+    names(extra) <- names(reserved)
+    dd <- c(dd, extra)
+  }
+  list(colors=colors, distances=dd)
 }
 
 computeDistances <- function(colorset) {

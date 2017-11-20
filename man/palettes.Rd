@@ -6,6 +6,8 @@
 \alias{green.armytage.colors}
 \alias{palette36.colors}
 \alias{glasbey.colors}
+\alias{light.colors}
+\alias{dark.colors}
 
 \title{Polychrome Color Palettes}
 \description{
@@ -13,11 +15,13 @@
   distinguishable colors.
 }
 \usage{
-kelly.colors(n=22)
-glasbey.colors(n=32)
-green.armytage.colors(n=26)
-palette36.colors(n=36)
-alphabet.colors(n=26)
+kelly.colors(n = 22)
+glasbey.colors(n = 32)
+green.armytage.colors(n = 26)
+palette36.colors(n = 36)
+alphabet.colors(n = 26)
+light.colors(n = 24)
+dark.colors(n = 24)
 }
 \arguments{
   \item{n}{An integer; the number of colors desired.}
@@ -58,6 +62,10 @@ alphabet.colors(n=26)
   The \code{alphabet.colors} function uses the first 26 colors from
   "\code{palette36}" but assigns them names beginning with different
   letters of the English alphabet and reorders them accordingly.
+
+  The \code{light.colors} and \code{dark.colors} functions use one of
+  the two 24-color palettes (\code{Light24} or \code{Dark24}) customized
+  to limit the luminance range.
 }
 \value{
   Each function returns a character vector of hexadecimal color values
@@ -85,5 +93,7 @@ kelly.colors(5)
 alphabet.colors(7)
 glasbey.colors(9)
 green.armytage.colors(3)
+light.colors(6)
+dark.colors(11)
 }
 \keyword{color}
