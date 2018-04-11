@@ -4,7 +4,7 @@ author: "Kevin R. Coombes"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Polychrome}
+  %\VignetteIndexEntry{Creating Palettes with Polychrome}
   %\VignetteKeywords{OOMPA,Polychrome,Color Palettes,Palettes}
   %\VignetteDepends{Polychrome}
   %\VignettePackage{Polychrome}

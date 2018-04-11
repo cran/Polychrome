@@ -4,7 +4,7 @@ author: "Kevin R. Coombes"
 data: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Polychrome}
+  %\VignetteIndexEntry{Color Deficits}
   %\VignetteKeywords{OOMPA,Polychrome,Color Palettes,Palettes}
   %\VignetteDepends{Polychrome}
   %\VignettePackage{Polychrome}
@@ -24,7 +24,7 @@ or defective in the eyes of an individual.
    trouble distinguishing red from green.
 2. Protanopes (about 2% of men) are green-blind, and they also have
    trouble distinguishing red from green.
-3. Tritanopes (less than 1% of men) are blue-blind, asnd they have
+3. Tritanopes (less than 1% of men) are blue-blind, and they have
    trouble distinguishing blue from yellow.
 
 <tt>Polychrome</tt> includes facilities to simulate different forms of
@@ -63,7 +63,7 @@ image(matrix(1:64), col=rg.trit)
 
 # Large Qualitative Palettes
 We repeat those operations for the 26-color alphabet palette from
-<tt>Polychfome</tt>. 
+<tt>Polychrome</tt>. 
 
 ```{r alfa, fig.cap = "The 26-color alphabet palette."}
 alfa <- alphabet.colors(26)
@@ -117,7 +117,7 @@ swatch(cp)
 
 Here we try to build a small palette that has at least some chance of being
 useful for people with any of the three forms of color-blindness. First, we
-get a slightly larger starting paltte, and convert it to simulate each of
+get a slightly larger starting palette, and convert it to simulate each of
 the three forms of color deficits.
 ```{r dists}
 p34 <- palette36.colors(36)[3:36]
@@ -169,5 +169,5 @@ simulate different forms of color deficits. We have also shown how to
 create palettes specifically for individuals with different color deficits.
 Finally, we have created a ten-color palette that has a reasonable chance
 of working simultaneously for individuals with any of the three most common
-form of color defictis.
+form of color deficits.
 

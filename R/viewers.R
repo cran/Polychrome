@@ -89,13 +89,18 @@ plotpc <- function(colorset, main=deparse(substitute(colorset)), ...) {
   invisible(pc)
 }
 
-p3d <- function(colorset, main=deparse(substitute(colorset))) {
+# added to allow external use of rgl
+getLUV <- function(colorset) {
   cset <- xform(colorset)
-  if (rgl.cur() == 0)  open3d(windowRect=c(40, 40, 840, 840))
   luvmat <- as(hex2RGB(cset), "LUV")
-  x <- luvmat@coords
-  plot3d(x, main=main)
-  spheres3d(x, radius=10, col=cset, shininess=100)
+  list(coords = luvmat@coords, cset = cset)
+}
+
+p3d <- function(colorset, main=deparse(substitute(colorset)), ...) {
+  y <- getLUV(colorset)
+  x <- y$coords
+  cset <- y$cset
+  scatterplot3d(x, color = cset, pch = 16, ...)
   invisible(cset)
 }
 

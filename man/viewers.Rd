@@ -31,7 +31,7 @@ uvscatter(colorset, main=deparse(substitute(colorset)), ...)
 luminance(colorset, main=deparse(substitute(colorset)), ...)
 plothc(colorset, main=deparse(substitute(colorset)), ...)
 plotpc(colorset, main=deparse(substitute(colorset)), ...)
-p3d(colorset, main=deparse(substitute(colorset)))
+p3d(colorset, main=deparse(substitute(colorset)), ...)
 }
 \arguments{
   \item{colorset}{a character vector containing hexadecimal color
@@ -99,7 +99,7 @@ ranpoints(alphabet)
 uvscatter(alphabet)
 luminance(alphabet)
 plothc(alphabet)
-p3d(alphabet)
+p3d(alphabet, cex.symbols = 2)
 swatch(alphabet)
 swatchHue(alphabet)
 swatchLuminance(alphabet)
