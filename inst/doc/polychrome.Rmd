@@ -90,8 +90,9 @@ hierarchical clustering of colors using this representation.
 ```{r fig.width=7, fig.height=5}
 plothc(pal2)
 ```
+
 We can also perform principal components in L\*u\*v\* space to display
-a projectionm that tries to preserve distances.
+a projection that tries to preserve distances.
 ```{r fig.width=7, fig.height=5}
 plotpc(pal2)
 ```
@@ -101,7 +102,7 @@ One further consideration that should be kept in mind when creating
 color palettes is that not every potential viewer has normal color
 vision. One way to test if a color palette will remain useful in this
 context is to convert it to gray scale. We do this by converting to
-grayscale using the desaturate function fromth  colorspace package,
+grayscale using the desaturate function from the colorspace package,
 and then preparing a barplot by luminance. 
 
 ```{r fig.width=7, fig.height=5}

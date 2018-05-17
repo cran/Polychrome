@@ -19,10 +19,10 @@ sRGB matrices.}
   This function converts normal-vision color palettes into simulations
   that represent what is likely to be seen with one of the three kinds
   of color deficits.  Deuteranopes are red-blind, which is the most
-common form of color deficit leading to an inability to ditinguish red
-and green. Protanopes are geen-blind; this is the second most common
-form of color-blindness and also leads to an inability to distinguiohg
-red and green. Tritanopes are blue blind Thisn is the rarest fomr of
+common form of color deficit leading to an inability to distinguish red
+and green. Protanopes are green-blind; this is the second most common
+form of color-blindness and also leads to an inability to distinguish
+red and green. Tritanopes are blue blind; this is the rarest form of
 color blindness and leads to an inability to distinguish blue and yellow. 
 }
 \value{

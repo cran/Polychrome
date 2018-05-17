@@ -1,3 +1,28 @@
+Polychrome v1.1.1 (Release Date: 2018-05-17)
+==============
+
+Bug Fixes:
+
+* Edited man pages and vignettes to remove typos.
+
+Polychrome v1.1.0 (Release Date: 2018-04-11)
+==============
+
+New Features:
+
+* Added a new precomputed palettes, 'colorsafe', that contains ten
+  colors that should be distinguishable even by most individuals with
+  color deficient vision.
+
+Changes:
+
+* Removed the dependence on the 'rgl' pacakge, since some people have
+  trouble installing the external dependency (XQuartz) on Macintosh
+  computers. Replaced it with 'scatterplot3D' for our 3D plots.
+
+* Added a 'getLUV" function so people who still want to use 'rgl' can
+  more easily do so.
+
 Polychrome v1.0.0 (Release Date: 2017-11=18)
 ==============
 

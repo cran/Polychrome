@@ -59,9 +59,9 @@ selection of colors with larger <tt>M</tt>. We have been successful using the
 default of 50000.
 4. The range depends on whether you expect to use a light background (take 
 <tt>range = c(10, 60)</tt>), a dark background (take <tt>range = c(55,
-95)</or both (take <tt>range = c(30, 80)</tt>).
+95)</tt> )or both (take <tt>range = c(30, 80)</tt>).
 5. Unless you really need colors called X1, ..., X37, you are probably better
-off using the <ttcolorNames</tt> function to assign meaningful names after
+off using the <tt>colorNames</tt> function to assign meaningful names after
 creating the palette.
 
 # A Small Palette
