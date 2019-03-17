@@ -39,8 +39,7 @@ colorNames(colorset)
   3:26--7. 
 
   Also see the Inter-Society Color Council web site
-  (\url{http://www.iscc.org/}) and the Texas
-  Precancel Club (\url{http://tx4.us/nbs-iscc.htm}). 
+  (\url{http://www.iscc.org/}). 
 }
 \seealso{
   \code{\link{iscc}}, \code{\link{colors}}.

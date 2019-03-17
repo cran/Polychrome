@@ -20,6 +20,8 @@ export(rancurves, ranpoints, uvscatter, luminance,
        colorNames, isccNames)
 export(getLUV)
 
+export(sortByHue, sortByLuminance)
+
 export(colorDeficit)
 
 # public data sets

@@ -115,23 +115,31 @@ swatch <- function(colorset, main=deparse(substitute(colorset))) {
   invisible(pts)
 }
 
-swatchHue <- function(colorset,
-                        main=paste(deparse(substitute(colorset)),
-                                   ", by Hue", sep="")) {
+sortByHue <- function(colorset) {
   cset <- xform(colorset)
   luv <- as(hex2RGB(cset), "HSV")
   tink <- luv@coords[,1]
-  hh <- cset[order(tink)]
+  cset[order(tink)]
+}
+
+swatchHue <- function(colorset,
+                        main=paste(deparse(substitute(colorset)),
+                                   ", by Hue", sep="")) {
+  hh <- sortByHue(colorset)
   swatch(hh, main=main)
+}
+
+sortByLuminance <- function(colorset) {
+  cset <- xform(colorset)
+  luv <- as(hex2RGB(cset), "LUV")
+  tink <- luv@coords[,1]
+  cset[order(tink)]
 }
 
 swatchLuminance <- function(colorset,
                         main=paste(deparse(substitute(colorset)),
                                    ", by Luminance", sep="")) {
-  cset <- xform(colorset)
-  luv <- as(hex2RGB(cset), "LUV")
-  tink <- luv@coords[,1]
-  hh <- cset[order(tink)]
+  hh <- sortByLuminance(colorset)
   swatch(hh, main=main)
 }
 
