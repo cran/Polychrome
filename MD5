@@ -1,4 +1,4 @@
-5d748f13d72d63c2e4ac078a8df263d0 *DESCRIPTION
+94ba772456452a92a3dfd1be07698d9a *DESCRIPTION
 cbd0bddb01152532fe8de63175180ba2 *NAMESPACE
 8fefce44793d74fdbdf97970a643fad7 *NEWS
 17306177c903c658e3ff7f2692ffc3f5 *R/creator.R
@@ -16,10 +16,10 @@ e5ed2e823b94d5a1e38ef90acfc90ede *data/alphabet.rda
 01eb9c070f77eaa8665c538fded32922 *data/palette36.rda
 1736e96845c376227ef2b05c723f96b9 *inst/doc/color-deficits.R
 65e8b28560f4f06b529e5a2042efd494 *inst/doc/color-deficits.Rmd
-5900a1d0c88c23272a38dca7006f7d0c *inst/doc/color-deficits.html
+86b65c35ee67b42d76ef86e48fb0732e *inst/doc/color-deficits.html
 21fcc2c99dc6aa4a811d0c1dd3f4fc19 *inst/doc/creatingPalettes.R
 232e8f4f6609e68cb0c91af0b241b8b9 *inst/doc/creatingPalettes.Rmd
-8a823bad50639e3cf331270a3a92fb4a *inst/doc/creatingPalettes.html
+9047136d82ff1062e740ec8fb17471ac *inst/doc/creatingPalettes.html
 dc885106e7553a60384a987e276c2bcd *inst/doc/polychrome.R
 656eaf35a4d547cfa645a83d1717075a *inst/doc/polychrome.Rmd
 9921cb907c439405dcafc35731f0b044 *inst/doc/polychrome.html
@@ -51,8 +51,8 @@ a8bd7e2cc98bfe634cdf84288adc43d3 *man/getLUV.Rd
 da828c1ffd2f2d81913a5cfb33787a10 *man/viewers.Rd
 d5c8966e7b6fbf0b8947555107a0f94d *tests/testDeficit.R
 1d8f1ab41b70483be0dd0921cde1b27c *tests/testDeficit.Rout.save
-b3342195bcb2cbddb11d32aae0d85dc3 *tests/testXform.R
-da07764abb1a8cc874f6a95415976aa5 *tests/testXform.Rout.save
+9c76ea183b6fe87394aa36e570469d51 *tests/testXform.R
+52d579bd21a464920d1742351e9d2dd2 *tests/testXform.Rout.save
 65e8b28560f4f06b529e5a2042efd494 *vignettes/color-deficits.Rmd
 232e8f4f6609e68cb0c91af0b241b8b9 *vignettes/creatingPalettes.Rmd
 656eaf35a4d547cfa645a83d1717075a *vignettes/polychrome.Rmd

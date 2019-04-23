@@ -1,6 +1,6 @@
 
-R version 3.4.0 (2017-04-21) -- "You Stupid Darkness"
-Copyright (C) 2017 The R Foundation for Statistical Computing
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -35,6 +35,7 @@ Type 'q()' to quit R.
 > all(tem == Polychrome:::xform(tem, alpha=TRUE))
 [1] TRUE
 > 
+> RNGversion("3.5.3")
 > set.seed(236746)
 > tem <- sample(colors(), 12)
 > Polychrome:::xform(tem)
@@ -85,4 +86,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-   0.59    0.17    0.76 
+   0.49    0.06    0.56 
