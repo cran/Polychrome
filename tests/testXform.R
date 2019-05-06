@@ -9,7 +9,7 @@ Polychrome:::xform(tem)
 tem <- topo.colors(12, alpha=0.6)
 all(tem == Polychrome:::xform(tem, alpha=TRUE))
 
-RNGversion("3.5.3")
+suppressWarnings( RNGversion("3.5.3") )
 set.seed(236746)
 tem <- sample(colors(), 12)
 Polychrome:::xform(tem)
