@@ -40,6 +40,11 @@ plotDistances(colorset, main=deparse(substitute(colorset)), pch=16, ...)
 \references{
   Carter RC, Carter EC. High-contrast sets of colors. Applied Optics,
   1982; 21(16):2936--9.
+  
+  Coombes KR, Brock G, Abrams ZB, Abruzzo LV. Polychrome: Creating and
+  Assessing Qualitative Palettes with Many Colors. Journal of
+  Statistical Software. 2019; 90(1):1--23.
+
 }
 \seealso{
   \code{\link{palette.viewers}}

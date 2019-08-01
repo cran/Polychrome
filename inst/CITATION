@@ -1,0 +1,21 @@
+bibentry(bibtype = "Article",
+  title        = "{Polychrome}: Creating and Assessing Qualitative Palettes with Many Colors",
+  author       = c(person(given = c("Kevin", "R."),
+                          family = "Coombes",
+                          email = "coombes.3@osu.edu"),
+                   person(given = "Guy",
+                          family = "Brock"),
+                   person(given = c("Zachary", "B."),
+                          family = "Abrams"),
+                   person(given = c("Lynne", "V."),
+                          family = "Abruzzo")),
+  journal      = "Journal of Statistical Software, Code Snippets",
+  year         = "2019",
+  volume       = "90",
+  number       = "1",
+  pages        = "1--23",
+  doi          = "10.18637/jss.v090.c01",
+
+  header       = "To cite Polychrome in publications use:"
+)
+

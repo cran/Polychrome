@@ -76,13 +76,18 @@ dark.colors(n = 24)
 \author{Kevin R. Coombes <krc@silicovore.com>}
 \references{
   Kelly KL. Twenty-Two Colors of Maximum Contrast. Color Eng., 1965;
-  3:26--7. 
+  3:26--7.
 
   Green-Armytage, P. A Colour Alphabet and the Limits of Colour
   Coding. Colour: Design and Creativity, 2010; 10:1--23.
-  
+
   Carter RC, Carter EC. High-contrast sets of colors. Applied Optics,
   1982; 21(16):2936--9.
+
+  Coombes KR, Brock G, Abrams ZB, Abruzzo LV. Polychrome: Creating and
+  Assessing Qualitative Palettes with Many Colors. Journal of
+  Statistical Software. 2019; 90(1):1--23.
+
 }
 \seealso{
   \code{\link{createPalette}}

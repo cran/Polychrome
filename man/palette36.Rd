@@ -16,8 +16,8 @@
 }
 \source{
   The color palette was generated using the \code{\link{createPalette}}
-  function with three seed colors: ebony ("#474747"), iron ("#E2E2E2"),
-  and red ("#F70000"). 
+  function with three seed colors: ebony ("#5A5156"), iron ("#E4E1E3"),
+  and red ("#F6222E"). 
 }
 \seealso{
   \code{\link{createPalette}}, \code{\link{isccNames}}.
