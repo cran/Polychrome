@@ -1,7 +1,7 @@
 Package: Polychrome
 Title: Qualitative Palettes with Many Colors
-Version: 1.2.3
-Date: 2019-08-01
+Version: 1.2.4
+Date: 2020-02-03
 Author: Kevin R. Coombes, Guy Brock
 Description: Tools for creating, viewing, and assessing qualitative
  palettes with many (20-30 or more) colors. See Coombes and colleagues
@@ -17,6 +17,6 @@ LazyData: no
 URL: http://oompa.r-forge.r-project.org/
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-08-01 12:08:11 UTC; Kevin
+Packaged: 2020-02-03 14:46:47 UTC; coom05
 Repository: CRAN
-Date/Publication: 2019-08-01 12:50:14 UTC
+Date/Publication: 2020-02-03 16:20:09 UTC

@@ -1,3 +1,11 @@
+Polychrome v1.2.4 (Release Date: 2020-02-03)
+==============
+
+Bug Fixes:
+
+* Tweaked a test script to limit the number of digits displayed, thus
+  avoiding platform differences during CRAN checks.
+
 Polychrome v1.2.0 (Release Date: 2019-03-17)
 ==============
 

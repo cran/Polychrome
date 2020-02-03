@@ -29,7 +29,7 @@ plotpc(tem)
 swatchHue(tem)
 swatchLuminance(tem)
 
-computeDistances(tem)
+round(computeDistances(tem), 1)
 plotDistances(tem, pch=16)
 
 colorNames(tem)

@@ -66,11 +66,9 @@ Type 'q()' to quit R.
 > swatchHue(tem)
 > swatchLuminance(tem)
 > 
-> computeDistances(tem)
-       X1       X11        X6        X2        X8       X12        X5        X3 
-205.45723 205.45723 169.64368 122.31665  88.50286  68.56755  57.76404  42.15425 
-       X7       X10        X4        X9 
- 40.81352  35.35324  19.75531  17.95080 
+> round(computeDistances(tem), 1)
+   X1   X11    X6    X2    X8   X12    X5    X3    X7   X10    X4    X9 
+205.5 205.5 169.6 122.3  88.5  68.6  57.8  42.2  40.8  35.4  19.8  18.0 
 > plotDistances(tem, pch=16)
 > 
 > colorNames(tem)
@@ -86,4 +84,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-   0.79    0.29    1.46 
+   0.68    0.32    0.95 
