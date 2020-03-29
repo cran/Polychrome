@@ -27,5 +27,6 @@ export(colorDeficit)
 # public data sets
 export(kelly.colors, green.armytage.colors,
        alphabet.colors, glasbey.colors,
-       palette36.colors, light.colors, dark.colors)
+       palette36.colors, light.colors, dark.colors,
+       sky.colors)
 

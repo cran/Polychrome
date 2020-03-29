@@ -86,6 +86,13 @@ dark.colors <- function(n = 24) {
 }
 
 ####################################
+sky.colors <- function(n = 24) {
+  data("sky-colors", package="Polychrome", envir=environment())
+  sky <- get("sky.colors", envir=environment())
+  return (makePalette(n, sky))
+}
+
+####################################
 # Kelly
 kelly.colors <- function(n = 22) {
   kelly <- c(

@@ -18,7 +18,7 @@ xform <- function(colset, alpha=FALSE) {
 
 
 invertColors <- function(...) {
-  par(bg="black", fg="white",
+  par(bg="gray30", fg="white",
       col.axis="white", col.lab="white",
       col.main="white", col.sub="white", ...)
 }

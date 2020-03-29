@@ -8,6 +8,7 @@
 \alias{glasbey.colors}
 \alias{light.colors}
 \alias{dark.colors}
+\alias{sky.colors}
 
 \title{Polychrome Color Palettes}
 \description{
@@ -22,6 +23,7 @@ palette36.colors(n = 36)
 alphabet.colors(n = 26)
 light.colors(n = 24)
 dark.colors(n = 24)
+sky.colors(n = 24)
 }
 \arguments{
   \item{n}{An integer; the number of colors desired.}
@@ -66,6 +68,11 @@ dark.colors(n = 24)
   The \code{light.colors} and \code{dark.colors} functions use one of
   the two 24-color palettes (\code{Light24} or \code{Dark24}) customized
   to limit the luminance range.
+
+  The \code{sky.colors} function uses the 24-color palette constructed
+  by Coombes et al. to match as closely as possibkle te palette used by
+  the standard software useed by cytogeneticists to display the results
+  of spectral karyotyping.
 }
 \value{
   Each function returns a character vector of hexadecimal color values
@@ -100,5 +107,6 @@ glasbey.colors(9)
 green.armytage.colors(3)
 light.colors(6)
 dark.colors(11)
+sky.colors(4)
 }
 \keyword{color}
