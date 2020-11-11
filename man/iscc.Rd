@@ -21,7 +21,7 @@
 }
 \references{
   See the Inter-Society Color Council web site
-  (\url{http://www.iscc.org/}); the Wikipedia article on the ISCC-NBS
+  (\url{https://iscc.org/}); the Wikipedia article on the ISCC-NBS
   system of color designation
   (\url{https://en.wikipedia.org/wiki/ISCC\%E2\%80\%93NBS_system}. 
 }

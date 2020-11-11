@@ -1,22 +1,109 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <meta name="author" content="Kevin R. Coombes" />
 
-<meta name="date" content="2020-03-29" />
+<meta name="date" content="2020-11-10" />
 
 <title>Polychrome: Creating New Palettes</title>
 
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      code.sourceCode > span { display: inline-block; line-height: 1.25; }
+  code.sourceCode > span { color: inherit; text-decoration: inherit; }
+  code.sourceCode > span:empty { height: 1.2em; }
+  .sourceCode { overflow: visible; }
+  code.sourceCode { white-space: pre; position: relative; }
+  div.sourceCode { margin: 1em 0; }
+  pre.sourceCode { margin: 0; }
+  @media screen {
+  div.sourceCode { overflow: auto; }
+  }
+  @media print {
+  code.sourceCode { white-space: pre-wrap; }
+  code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+  }
+  pre.numberSource code
+    { counter-reset: source-line 0; }
+  pre.numberSource code > span
+    { position: relative; left: -4em; counter-increment: source-line; }
+  pre.numberSource code > span > a:first-child::before
+    { content: counter(source-line);
+      position: relative; left: -1em; text-align: right; vertical-align: baseline;
+      border: none; display: inline-block;
+      -webkit-touch-callout: none; -webkit-user-select: none;
+      -khtml-user-select: none; -moz-user-select: none;
+      -ms-user-select: none; user-select: none;
+      padding: 0 4px; width: 4em;
+      color: #aaaaaa;
+    }
+  pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+  div.sourceCode
+    {   }
+  @media screen {
+  code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+  }
+  code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+  code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+  code span.at { color: #7d9029; } /* Attribute */
+  code span.bn { color: #40a070; } /* BaseN */
+  code span.bu { } /* BuiltIn */
+  code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+  code span.ch { color: #4070a0; } /* Char */
+  code span.cn { color: #880000; } /* Constant */
+  code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+  code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+  code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+  code span.dt { color: #902000; } /* DataType */
+  code span.dv { color: #40a070; } /* DecVal */
+  code span.er { color: #ff0000; font-weight: bold; } /* Error */
+  code span.ex { } /* Extension */
+  code span.fl { color: #40a070; } /* Float */
+  code span.fu { color: #06287e; } /* Function */
+  code span.im { } /* Import */
+  code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+  code span.op { color: #666666; } /* Operator */
+  code span.ot { color: #007020; } /* Other */
+  code span.pp { color: #bc7a00; } /* Preprocessor */
+  code span.sc { color: #4070a0; } /* SpecialChar */
+  code span.ss { color: #bb6688; } /* SpecialString */
+  code span.st { color: #4070a0; } /* String */
+  code span.va { color: #19177c; } /* Variable */
+  code span.vs { color: #4070a0; } /* VerbatimString */
+  code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -120,9 +207,6 @@ padding-right: 2em;
 font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 font-size: 14px;
 line-height: 1.35;
-}
-#header {
-text-align: center;
 }
 #TOC {
 clear: both;
@@ -291,7 +375,8 @@ code > span.st { color: #d14; }
 code > span.co { color: #888888; font-style: italic; } 
 code > span.ot { color: #007020; } 
 code > span.al { color: #ff0000; font-weight: bold; } 
-code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
 </style>
 
 
@@ -306,7 +391,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 <h1 class="title toc-ignore">Polychrome: Creating New Palettes</h1>
 <h4 class="author">Kevin R. Coombes</h4>
-<h4 class="date">2020-03-29</h4>
+<h4 class="date">2020-11-10</h4>
 
 
 
@@ -344,10 +429,10 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">set.seed</span>(<span class="dv">723451</span>) <span class="co"># for reproducibility</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>firstpal &lt;-<span class="st"> </span><span class="kw">createPalette</span>(<span class="dv">10</span>, <span class="kw">c</span>(<span class="st">&quot;#010101&quot;</span>, <span class="st">&quot;#ff0000&quot;</span>), <span class="dt">M=</span><span class="dv">1000</span>)</span>
 <span id="cb4-3"><a href="#cb4-3"></a>firstpal</span></code></pre></div>
-<pre><code>##       NC1       NC2       NC3       NC4       NC5       NC6       NC7 
-## &quot;#224F63&quot; &quot;#FF0D45&quot; &quot;#F0E716&quot; &quot;#FD2EE3&quot; &quot;#2E51FB&quot; &quot;#38F7B2&quot; &quot;#FC9BA4&quot; 
-##       NC8       NC9      NC10 
-## &quot;#D39CF8&quot; &quot;#0DEAFB&quot; &quot;#D7DDBE&quot;</code></pre>
+<pre><code>##       NC1       NC2       NC3       NC4       NC5       NC6       NC7       NC8 
+## &quot;#224F63&quot; &quot;#FF0D45&quot; &quot;#F0E716&quot; &quot;#FD2EE3&quot; &quot;#2E51FB&quot; &quot;#38F7B2&quot; &quot;#FC9BA4&quot; &quot;#D39CF8&quot; 
+##       NC9      NC10 
+## &quot;#0DEAFB&quot; &quot;#D7DDBE&quot;</code></pre>
 <p>The probably surprising result is that the seed colors are actually <em>not</em> included in the final palette. There are two reasons for this. First, the colors ‘black’ and ‘red’ are outside the specified (default) luminance range. So, they are replaced by the closest randomly generated colors that are inside the range. But that leads us to the second reason. We specified a small value of <tt>M</tt>. The algorithm operates by randomly selecting a set of potential colors in the desired range, and will eventually assemble the palette from this set. With only 1000 candidates, there may not be anything that looks close to pure red or pure black in the set of candidates.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">swatch</span>(firstpal)</span></code></pre></div>
 <div class="figure">
@@ -467,10 +552,10 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">set.seed</span>(<span class="dv">723451</span>) <span class="co"># for reproducibility</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>lastpal &lt;-<span class="st"> </span><span class="kw">createPalette</span>(<span class="dv">10</span>, <span class="kw">c</span>(<span class="st">&quot;#010101&quot;</span>, <span class="st">&quot;#ff0000&quot;</span>), <span class="dt">M=</span><span class="dv">10000</span>)</span>
 <span id="cb35-3"><a href="#cb35-3"></a>lastpal</span></code></pre></div>
-<pre><code>##       NC1       NC2       NC3       NC4       NC5       NC6       NC7 
-## &quot;#494747&quot; &quot;#F70D26&quot; &quot;#49F900&quot; &quot;#DC0DFF&quot; &quot;#FFCE26&quot; &quot;#009FF9&quot; &quot;#F05AA8&quot; 
-##       NC8       NC9      NC10 
-## &quot;#00FBEC&quot; &quot;#E8B4FE&quot; &quot;#8EC06E&quot;</code></pre>
+<pre><code>##       NC1       NC2       NC3       NC4       NC5       NC6       NC7       NC8 
+## &quot;#494747&quot; &quot;#F70D26&quot; &quot;#49F900&quot; &quot;#DC0DFF&quot; &quot;#FFCE26&quot; &quot;#009FF9&quot; &quot;#F05AA8&quot; &quot;#00FBEC&quot; 
+##       NC9      NC10 
+## &quot;#E8B4FE&quot; &quot;#8EC06E&quot;</code></pre>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="kw">swatch</span>(firstpal)</span></code></pre></div>
 <div class="figure">
 <img src="data:image/png;base64,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" alt />

@@ -39,7 +39,7 @@ colorNames(colorset)
   3:26--7. 
 
   Also see the Inter-Society Color Council web site
-  (\url{http://www.iscc.org/}). 
+  (\url{https://iscc.org/}). 
 }
 \seealso{
   \code{\link{iscc}}, \code{\link{colors}}.
