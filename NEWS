@@ -1,3 +1,11 @@
+Polychrome v1.4.0 (Release Date: 2022-04-15)
+==============
+
+New Features:
+
+* Added general "..." arguments to the "memberPlot" function. The primary
+  application is expected to be the ability to add a plot "maijn" title. 
+
 Polychrome v1.3.0 (Release Date: 2021-07-15)
 ==============
 

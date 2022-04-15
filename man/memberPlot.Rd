@@ -10,7 +10,7 @@
   categories. In this case, membership plots are more useful.
 }
 \usage{
-memberPlot(bindat, pal = NULL, xlab = "Members", ylab = "Categories")
+memberPlot(bindat, pal = NULL, xlab = "Members", ylab = "Categories", \dots)
 }
 \arguments{
   \item{bindat}{A binary matrix where rows are categories, columns are
@@ -20,6 +20,7 @@ memberPlot(bindat, pal = NULL, xlab = "Members", ylab = "Categories")
     non-members; all other colors are used to denote different categories.}
   \item{xlab}{The usual graphical parameter.}
   \item{ylab}{The usual graphical parameter.}
+  \item{\dots}{Additional plot parameters, especially "main" or "sub".}
 }
 \details{
   Membership plots are implemented as an image, where each row

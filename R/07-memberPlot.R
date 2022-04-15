@@ -1,5 +1,5 @@
 memberPlot <- function(bindat, pal = NULL,
-                       xlab = "Members", ylab = "Categories") {
+                       xlab = "Members", ylab = "Categories", ...) {
   ## Ensure that it is really a binary matrix
   if(any(is.na(bindat))) stop("Data contains mssing values.")
   if(!all(bindat %in% 0:1)) stop("Matrix values must equal '0' or '1'.")
@@ -26,7 +26,7 @@ memberPlot <- function(bindat, pal = NULL,
   bindat <- bindat[, ocount > 0]
   image(1:ncol(bindat), 1:nrow(bindat), t(bindat),
         col = pal[1:(1+nrow(bindat))],
-        xlab = xlab, ylab = ylab, yaxt = "n")
+        xlab = xlab, ylab = ylab, yaxt = "n", ...)
   mtext(rownames(bindat), side =2, las = 2, at = 1:nrow(bindat), line = 1)
   text(ncol(bindat)/2, 1:nrow(bindat),
        paste("N =", apply(bindat > 0, 1, sum)),
