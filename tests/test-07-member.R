@@ -20,4 +20,5 @@ noise <- matrix(rbinom(prod(dim(temp)), 1, 0.05),
                 ncol = ncol(temp))
 meme <- 1*(temp | noise)
 memberPlot(meme)
-
+memberPlot(meme, ylab = "",
+           features = c(123, 45, 18, 87, 75, 1234, 88, 999)) 

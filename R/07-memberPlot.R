@@ -1,4 +1,4 @@
-memberPlot <- function(bindat, pal = NULL,
+memberPlot <- function(bindat, features = NULL, pal = NULL,
                        xlab = "Members", ylab = "Categories", ...) {
   ## Ensure that it is really a binary matrix
   if(any(is.na(bindat))) stop("Data contains mssing values.")
@@ -17,7 +17,7 @@ memberPlot <- function(bindat, pal = NULL,
   M <- 1:nrow(bindat)
   bindat <- sweep(bindat, 1, M, "*")
   bindat <- bindat[rev(order(counts)),] # sort rows by membership
-  
+  if(!missing(features)) features <- features[rev(order(counts))]
   # order columns successively by row membership
   bd <- as.list(as.data.frame(t(bindat))) # temporary, for ordering
   oo <- do.call(order, bd)
@@ -27,7 +27,13 @@ memberPlot <- function(bindat, pal = NULL,
   image(1:ncol(bindat), 1:nrow(bindat), t(bindat),
         col = pal[1:(1+nrow(bindat))],
         xlab = xlab, ylab = ylab, yaxt = "n", ...)
-  mtext(rownames(bindat), side =2, las = 2, at = 1:nrow(bindat), line = 1)
+  if (!is.null(features)) {
+    mtext(rownames(bindat), side =2, las = 2, at = 1:nrow(bindat)+0.1, line = 1)
+    mtext(paste("D =", features), font = 2, side = 2, las = 2,
+          at = 1:nrow(bindat)-0.2, line = 1)
+  } else {
+    mtext(rownames(bindat), side =2, las = 2, at = 1:nrow(bindat), line = 1)
+  }
   text(ncol(bindat)/2, 1:nrow(bindat),
        paste("N =", apply(bindat > 0, 1, sum)),
        font = 2, cex=1.2)
