@@ -23,7 +23,7 @@ colorNames(colorset)
   Each of the ISCC-NBS 267 standard color names is represented by the
   centroid of a region of CIE L*u*v* color space, all of whose points
   should be given the same name.  Each of the color names listed by the
-  \code{\link{colors}} function has an associated RGB color that can
+  \code{\link[grDevices]{colors}} function has an associated RGB color that can
   also be converted to L*u*v* space. These functions take colors
   represented in the common hexadecimal notation, maps them into L*u*v*
   color space, and assigns the name of the nearest ISCC centroid or
@@ -42,7 +42,7 @@ colorNames(colorset)
   (\url{https://iscc.org/}). 
 }
 \seealso{
-  \code{\link{iscc}}, \code{\link{colors}}.
+  \code{\link{iscc}}, \code{\link[grDevices]{colors}}.
 }
 \examples{
 data(alphabet)

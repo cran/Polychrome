@@ -23,7 +23,7 @@ invertColors(...)
 }
 \author{Kevin R. Coombes <krc@silicovore.com>}
 \seealso{
-  \code{\link{par}}
+  \code{\link[graphics]{par}}
 }
 \examples{
 opar <- invertColors()

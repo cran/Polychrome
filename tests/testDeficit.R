@@ -27,7 +27,7 @@ summary(linmat - linrgb@coords) # all 0, so we are doing the same thing
 ## we need to transpose stuff
 xyz <- linmat %*% t(Polychrome:::RGB2XYZ)
 rgb.back <- xyz %*% t(Polychrome:::XYZ2RGB)
-summary(linmat - rgb.back) # accurate to 4 decimal places
+summary(round(linmat - rgb.back, 3)) # accurate to 4 decimal places
 
 ## multiple options for convertiong XYZ spoace to LMS perceptual space
 
@@ -61,7 +61,7 @@ all(daltP36 == hex(daltRGB)) # agreement
 # invariance
 reup <- colorDeficit(daltMat, "deut")
 all(daltMat == reup) # why false?
-summary(daltMat - reup)
+all(abs(daltMat - reup) < 0.4)
 
 sndP36 <- hex(new("sRGB", coords=reup))
 

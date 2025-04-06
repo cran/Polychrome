@@ -71,7 +71,7 @@ rp <- rank(pd)[order(names(pp))]
 rt <- rank(pd)[order(names(pt))]
 score <- 2*rd + 1.5*rp + rt
 
-## ---- fig.width=8, fig.height=7, fig.cap="Color safe palette."----------------
+## ----fig.width=8, fig.height=7, fig.cap="Color safe palette."-----------------
 x <- p34[names(rev(sort(score)))][1:10]
 y <- colorDeficit(x, "deut")
 z <- colorDeficit(x, "prot")
@@ -83,6 +83,6 @@ swatch(y, main="Deuteranope")
 swatch(z, main="Protanope")
 swatch(w, main="Tritanope")
 
-## ---- echo=FALSE--------------------------------------------------------------
+## ----echo=FALSE---------------------------------------------------------------
 par(opar)
 

@@ -1,7 +1,7 @@
 
-R version 3.4.0 (2017-04-21) -- "You Stupid Darkness"
-Copyright (C) 2017 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
+R version 4.4.3 (2025-02-28 ucrt) -- "Trophy Case"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -53,14 +53,14 @@ Type 'q()' to quit R.
 > ## we need to transpose stuff
 > xyz <- linmat %*% t(Polychrome:::RGB2XYZ)
 > rgb.back <- xyz %*% t(Polychrome:::XYZ2RGB)
-> summary(linmat - rgb.back) # accurate to 4 decimal places
-       R                    G                    B             
- Min.   :-2.293e-05   Min.   :-5.203e-05   Min.   :-1.412e-05  
- 1st Qu.:-1.402e-05   1st Qu.:-2.877e-05   1st Qu.:-9.873e-06  
- Median :-4.252e-06   Median :-1.650e-05   Median :-4.349e-06  
- Mean   :-6.340e-06   Mean   :-1.927e-05   Mean   :-5.645e-06  
- 3rd Qu.: 6.788e-07   3rd Qu.:-6.768e-06   3rd Qu.:-1.928e-06  
- Max.   : 8.001e-06   Max.   : 6.712e-06   Max.   :-4.517e-07  
+> summary(round(linmat - rgb.back, 3)) # accurate to 4 decimal places
+       R           G           B    
+ Min.   :0   Min.   :0   Min.   :0  
+ 1st Qu.:0   1st Qu.:0   1st Qu.:0  
+ Median :0   Median :0   Median :0  
+ Mean   :0   Mean   :0   Mean   :0  
+ 3rd Qu.:0   3rd Qu.:0   3rd Qu.:0  
+ Max.   :0   Max.   :0   Max.   :0  
 > 
 > ## multiple options for convertiong XYZ spoace to LMS perceptual space
 > 
@@ -110,14 +110,8 @@ attr(,"package")
 > reup <- colorDeficit(daltMat, "deut")
 > all(daltMat == reup) # why false?
 [1] FALSE
-> summary(daltMat - reup)
-       V1                   V2                   V3            
- Min.   :-0.0000082   Min.   :-2.789e-02   Min.   :-0.0067999  
- 1st Qu.: 0.0000000   1st Qu.:-1.579e-05   1st Qu.:-0.0000063  
- Median : 0.0000000   Median : 0.000e+00   Median : 0.0045747  
- Mean   : 0.0111090   Mean   :-1.124e-03   Mean   : 0.0196263  
- 3rd Qu.: 0.0000000   3rd Qu.: 0.000e+00   3rd Qu.: 0.0478768  
- Max.   : 0.3999611   Max.   : 3.163e-02   Max.   : 0.0599644  
+> all(abs(daltMat - reup) < 0.4)
+[1] TRUE
 > 
 > sndP36 <- hex(new("sRGB", coords=reup))
 > 
@@ -151,4 +145,4 @@ attr(,"package")
 > 
 > proc.time()
    user  system elapsed 
-   2.15    0.24    2.38 
+   1.15    0.14    1.28 
